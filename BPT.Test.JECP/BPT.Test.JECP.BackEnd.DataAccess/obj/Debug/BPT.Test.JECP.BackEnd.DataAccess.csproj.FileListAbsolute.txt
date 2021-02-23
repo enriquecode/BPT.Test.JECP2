@@ -1,0 +1,12 @@
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\bin\Debug\BPT.Test.JECP.BackEnd.DataAccess.dll.config
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\bin\Debug\BPT.Test.JECP.BackEnd.DataAccess.dll
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\bin\Debug\BPT.Test.JECP.BackEnd.DataAccess.pdb
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\obj\Debug\BPT.Test.JECP.BackEnd.DataAccess.csprojAssemblyReference.cache
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\obj\Debug\BPT.Test.JECP.BackEnd.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\obj\Debug\BPT.Test.JECP.BackEnd.DataAccess.csproj.CopyComplete
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\obj\Debug\BPT.Test.JECP.BackEnd.DataAccess.dll
+C:\Users\Equipo\source\git\PagaTodo\BPT.Test.JECP\BPT.Test.JECP\BPT.Test.JECP.BackEnd.DataAccess\obj\Debug\BPT.Test.JECP.BackEnd.DataAccess.pdb

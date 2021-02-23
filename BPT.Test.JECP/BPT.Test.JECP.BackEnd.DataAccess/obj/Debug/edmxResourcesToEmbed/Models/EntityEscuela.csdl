@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EscuelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Asignaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AsignacionesEstudiantes" Relationship="Self.FK_AsignacionesEstudiantes_Asignaciones" FromRole="Asignaciones" ToRole="AsignacionesEstudiantes" />
+  </EntityType>
+  <EntityType Name="AsignacionesEstudiantes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEstudiante" Type="Int32" Nullable="false" />
+    <Property Name="IdAsignacion" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Asignaciones" Relationship="Self.FK_AsignacionesEstudiantes_Asignaciones" FromRole="AsignacionesEstudiantes" ToRole="Asignaciones" />
+    <NavigationProperty Name="Estudiantes" Relationship="Self.FK_AsignacionesEstudiantes_Estudiantes" FromRole="AsignacionesEstudiantes" ToRole="Estudiantes" />
+  </EntityType>
+  <EntityType Name="Estudiantes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="AsignacionesEstudiantes" Relationship="Self.FK_AsignacionesEstudiantes_Estudiantes" FromRole="Estudiantes" ToRole="AsignacionesEstudiantes" />
+  </EntityType>
+  <Association Name="FK_AsignacionesEstudiantes_Asignaciones">
+    <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="1" />
+    <End Role="AsignacionesEstudiantes" Type="Self.AsignacionesEstudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignaciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AsignacionesEstudiantes">
+        <PropertyRef Name="IdAsignacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AsignacionesEstudiantes_Estudiantes">
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="1" />
+    <End Role="AsignacionesEstudiantes" Type="Self.AsignacionesEstudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiantes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AsignacionesEstudiantes">
+        <PropertyRef Name="IdEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EscuelaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" />
+    <EntitySet Name="AsignacionesEstudiantes" EntityType="Self.AsignacionesEstudiantes" />
+    <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" />
+    <AssociationSet Name="FK_AsignacionesEstudiantes_Asignaciones" Association="Self.FK_AsignacionesEstudiantes_Asignaciones">
+      <End Role="Asignaciones" EntitySet="Asignaciones" />
+      <End Role="AsignacionesEstudiantes" EntitySet="AsignacionesEstudiantes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AsignacionesEstudiantes_Estudiantes" Association="Self.FK_AsignacionesEstudiantes_Estudiantes">
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+      <End Role="AsignacionesEstudiantes" EntitySet="AsignacionesEstudiantes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

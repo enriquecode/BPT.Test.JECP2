@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EscuelaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Asignaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AsignacionesEstudiantes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEstudiante" Type="int" Nullable="false" />
+    <Property Name="IdAsignacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estudiantes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AsignacionesEstudiantes_Asignaciones">
+    <End Role="Asignaciones" Type="Self.Asignaciones" Multiplicity="1" />
+    <End Role="AsignacionesEstudiantes" Type="Self.AsignacionesEstudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asignaciones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AsignacionesEstudiantes">
+        <PropertyRef Name="IdAsignacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AsignacionesEstudiantes_Estudiantes">
+    <End Role="Estudiantes" Type="Self.Estudiantes" Multiplicity="1" />
+    <End Role="AsignacionesEstudiantes" Type="Self.AsignacionesEstudiantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estudiantes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AsignacionesEstudiantes">
+        <PropertyRef Name="IdEstudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EscuelaModelStoreContainer">
+    <EntitySet Name="Asignaciones" EntityType="Self.Asignaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AsignacionesEstudiantes" EntityType="Self.AsignacionesEstudiantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estudiantes" EntityType="Self.Estudiantes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AsignacionesEstudiantes_Asignaciones" Association="Self.FK_AsignacionesEstudiantes_Asignaciones">
+      <End Role="Asignaciones" EntitySet="Asignaciones" />
+      <End Role="AsignacionesEstudiantes" EntitySet="AsignacionesEstudiantes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AsignacionesEstudiantes_Estudiantes" Association="Self.FK_AsignacionesEstudiantes_Estudiantes">
+      <End Role="Estudiantes" EntitySet="Estudiantes" />
+      <End Role="AsignacionesEstudiantes" EntitySet="AsignacionesEstudiantes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
